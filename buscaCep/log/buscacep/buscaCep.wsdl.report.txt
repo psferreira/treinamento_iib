@@ -1,0 +1,13 @@
+
+
+Importing file: /home/pferreira/IBM/IIBT10/workspace_treinamento/buscaCep/buscaCep.wsdl
+
+The WSDL import will proceed with bindings buscaCepHttpBinding.
+Creating wsdl schema document for platform:/resource/buscaCep/buscaCep.wsdl.
+Parsing wsdl binding {http://buscaCep}buscaCepHttpBinding.
+Parsing wsdl binding input buscaCep.
+Parsing wsdl binding output buscaCep.
+Processing doc style for operation buscaCep.
+Populating WSDL schema buscaCep.xsd.
+Creating file buscaCep.xsd in the workspace.
+Copying source WSDL buscaCep.wsdl to buscaCep.wsdl.

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:restapiDescriptor xmlns="http://com.ibm.etools.mft.descriptor.base" xmlns:ns2="http://com.ibm.etools.mft.descriptor.restapi" definitionType="swagger_20" definitionFile="cotacao-dolar.json" implementation="gen/buscaCotacao.msgflow" https="false">
+    <ns2:operations>
+        <ns2:operation name="pesquisaDolar" implementation="pesquisaDolar.subflow"/>
+    </ns2:operations>
+    <ns2:errorHandlers>
+        <ns2:errorHandler type="CATCH" implementation="buscaCotacaoInputCatchHandler.subflow"/>
+        <ns2:errorHandler type="FAILURE" implementation="buscaCotacaoInputFailureHandler.subflow"/>
+        <ns2:errorHandler type="TIMEOUT" implementation="buscaCotacaoInputTimeoutHandler.subflow"/>
+    </ns2:errorHandlers>
+</ns2:restapiDescriptor>

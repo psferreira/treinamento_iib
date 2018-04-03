@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://buscaCep" xmlns:tns="http://buscaCep">
+    <xsd:include schemaLocation="buscaCep.xsd"/>
+    <xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="buscaCep">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="input" nillable="true" type="tns:inputCep"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="buscaCepResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="output" nillable="true" type="tns:outputCep"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="inputCep">
+		<xsd:sequence>
+			<xsd:element name="codigoPostal" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="outputCep">
+		<xsd:sequence>
+			<xsd:element name="estado" type="xsd:string"/>
+			<xsd:element name="endereco" type="xsd:string"/>
+			<xsd:element name="cidade" type="xsd:string"/>
+			<xsd:element name="complemento" type="xsd:string"/>
+			<xsd:element name="cep" type="xsd:string"/>
+			<xsd:element name="bairro" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

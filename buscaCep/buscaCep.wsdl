@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	name="buscaCep" targetNamespace="http://buscaCep" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://buscaCep"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<wsdl:documentation>
+		<wsdl:appinfo source="WMQI_APPINFO">
+			<MRWSDLAppInfo imported="true">
+				<binding hasEncoding="false" imported="true" name="buscaCepHttpBinding"
+					originalBindingStyle="document" />
+				<generatedXSD location="buscaCep_InlineSchema1.xsd" />
+			</MRWSDLAppInfo>
+		</wsdl:appinfo>
+	</wsdl:documentation>
+
+
+
+
+	<wsdl:types>
+
+		<xsd:schema targetNamespace="http://buscaCep"
+			xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions">
+			<xsd:include schemaLocation="buscaCep_InlineSchema1.xsd" />
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="buscaCepRequestMsg">
+		<wsdl:part element="tns:buscaCep" name="buscaCepParameters" />
+	</wsdl:message>
+	<wsdl:message name="buscaCepResponseMsg">
+		<wsdl:part element="tns:buscaCepResponse" name="buscaCepResult" />
+	</wsdl:message>
+	<wsdl:portType name="buscaCep">
+		<wsdl:operation name="buscaCep">
+			<wsdl:input message="tns:buscaCepRequestMsg" name="buscaCepRequest" />
+			<wsdl:output message="tns:buscaCepResponseMsg" name="buscaCepResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="buscaCepHttpBinding" type="tns:buscaCep">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="buscaCep">
+			<soap:operation soapAction="http://buscaCep/buscaCep" />
+			<wsdl:input name="buscaCepRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="buscaCepResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="buscaCepHttpService">
+		<wsdl:port binding="tns:buscaCepHttpBinding" name="buscaCepHttpPort">
+			<soap:address location="http://localhost:7800/buscaCep" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

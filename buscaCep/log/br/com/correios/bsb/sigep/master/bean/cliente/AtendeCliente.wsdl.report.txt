@@ -1,0 +1,189 @@
+
+
+Importing file: /SigepMasterJPA/AtendeClienteService/AtendeCliente.wsdl
+
+The WSDL import will proceed with bindings AtendeClienteServiceSoapBinding.
+Creating wsdl schema document for RemoteFiles/AtendeCliente.xsd.
+Parsing wsdl binding {http://cliente.bean.master.sigep.bsb.correios.com.br/}AtendeClienteServiceSoapBinding.
+Parsing wsdl binding input buscaServicosAdicionaisAtivos.
+Parsing wsdl binding output buscaServicosAdicionaisAtivos.
+Parsing wsdl binding fault SQLException.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input fechaPlp.
+Parsing wsdl binding output fechaPlp.
+Parsing wsdl binding fault AutenticacaoException.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input consultaSRO.
+Parsing wsdl binding output consultaSRO.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input validaPlp.
+Parsing wsdl binding output validaPlp.
+Parsing wsdl binding fault AutenticacaoException.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input calculaTarifaServico.
+Parsing wsdl binding output calculaTarifaServico.
+Parsing wsdl binding fault Exception.
+Parsing wsdl binding fault AutenticacaoException.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input VerificaSeTodosObjetosCancelados.
+Parsing wsdl binding output VerificaSeTodosObjetosCancelados.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input cancelarObjeto.
+Parsing wsdl binding output cancelarObjeto.
+Parsing wsdl binding fault Exception.
+Parsing wsdl binding fault AutenticacaoException.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input atualizaPagamentoNaEntrega.
+Parsing wsdl binding output atualizaPagamentoNaEntrega.
+Parsing wsdl binding fault SQLException.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input obterClienteAtualizacao.
+Parsing wsdl binding output obterClienteAtualizacao.
+Parsing wsdl binding fault AutenticacaoException.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input verificaDisponibilidadeServico.
+Parsing wsdl binding output verificaDisponibilidadeServico.
+Parsing wsdl binding fault AutenticacaoException.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input fechaPlpVariosServicos.
+Parsing wsdl binding output fechaPlpVariosServicos.
+Parsing wsdl binding fault AutenticacaoException.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input geraDigitoVerificadorEtiquetas.
+Parsing wsdl binding output geraDigitoVerificadorEtiquetas.
+Parsing wsdl binding fault AutenticacaoException.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input obterEmbalagemLRS.
+Parsing wsdl binding output obterEmbalagemLRS.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input validaEtiquetaPLP.
+Parsing wsdl binding output validaEtiquetaPLP.
+Parsing wsdl binding fault AutenticacaoException.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input buscaServicosValorDeclarado.
+Parsing wsdl binding output buscaServicosValorDeclarado.
+Parsing wsdl binding fault SQLException.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input consultaCEP.
+Parsing wsdl binding output consultaCEP.
+Parsing wsdl binding fault SQLException.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input integrarUsuarioScol.
+Parsing wsdl binding output integrarUsuarioScol.
+Parsing wsdl binding fault AutenticacaoException.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input atualizaRemessaAgrupada.
+Parsing wsdl binding output atualizaRemessaAgrupada.
+Parsing wsdl binding fault SQLException.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input solicitaPLP.
+Parsing wsdl binding output solicitaPLP.
+Parsing wsdl binding fault AutenticacaoException.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input getStatusCartaoPostagem.
+Parsing wsdl binding output getStatusCartaoPostagem.
+Parsing wsdl binding fault AutenticacaoException.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input buscaTarifaVale.
+Parsing wsdl binding output buscaTarifaVale.
+Parsing wsdl binding fault Exception.
+Parsing wsdl binding fault AutenticacaoException.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input validarPostagemSimultanea.
+Parsing wsdl binding output validarPostagemSimultanea.
+Parsing wsdl binding fault AutenticacaoException.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input getStatusPLP.
+Parsing wsdl binding output getStatusPLP.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input buscaServicosXServicosAdicionais.
+Parsing wsdl binding output buscaServicosXServicosAdicionais.
+Parsing wsdl binding fault SQLException.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input cancelarPedidoScol.
+Parsing wsdl binding output cancelarPedidoScol.
+Parsing wsdl binding fault AutenticacaoException.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input bloquearObjeto.
+Parsing wsdl binding output bloquearObjeto.
+Parsing wsdl binding fault AutenticacaoException.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input buscaContrato.
+Parsing wsdl binding output buscaContrato.
+Parsing wsdl binding fault AutenticacaoException.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input solicitaEtiquetas.
+Parsing wsdl binding output solicitaEtiquetas.
+Parsing wsdl binding fault AutenticacaoException.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input solicitaXmlPlp.
+Parsing wsdl binding output solicitaXmlPlp.
+Parsing wsdl binding fault AutenticacaoException.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input validarPostagemReversa.
+Parsing wsdl binding output validarPostagemReversa.
+Parsing wsdl binding fault AutenticacaoException.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input buscaCliente.
+Parsing wsdl binding output buscaCliente.
+Parsing wsdl binding fault AutenticacaoException.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input buscaPagamentoEntrega.
+Parsing wsdl binding output buscaPagamentoEntrega.
+Parsing wsdl binding fault AutenticacaoException.
+Parsing wsdl binding fault ErroMontagemRelatorio.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input solicitarPostagemScol.
+Parsing wsdl binding output solicitarPostagemScol.
+Parsing wsdl binding fault AutenticacaoException.
+Parsing wsdl binding fault SigepClienteException.
+Parsing wsdl binding input buscaServicos.
+Parsing wsdl binding output buscaServicos.
+Parsing wsdl binding fault AutenticacaoException.
+Parsing wsdl binding fault SigepClienteException.
+Processing doc style for operation buscaServicosAdicionaisAtivos.
+Processing doc style for operation fechaPlp.
+Processing doc style for operation consultaSRO.
+Processing doc style for operation validaPlp.
+Processing doc style for operation calculaTarifaServico.
+Processing doc style for operation VerificaSeTodosObjetosCancelados.
+Processing doc style for operation cancelarObjeto.
+Processing doc style for operation atualizaPagamentoNaEntrega.
+Processing doc style for operation obterClienteAtualizacao.
+Processing doc style for operation verificaDisponibilidadeServico.
+Processing doc style for operation fechaPlpVariosServicos.
+Processing doc style for operation geraDigitoVerificadorEtiquetas.
+Processing doc style for operation obterEmbalagemLRS.
+Processing doc style for operation validaEtiquetaPLP.
+Processing doc style for operation buscaServicosValorDeclarado.
+Processing doc style for operation consultaCEP.
+Processing doc style for operation integrarUsuarioScol.
+Processing doc style for operation atualizaRemessaAgrupada.
+Processing doc style for operation solicitaPLP.
+Processing doc style for operation getStatusCartaoPostagem.
+Processing doc style for operation buscaTarifaVale.
+Processing doc style for operation validarPostagemSimultanea.
+Processing doc style for operation getStatusPLP.
+Processing doc style for operation buscaServicosXServicosAdicionais.
+Processing doc style for operation cancelarPedidoScol.
+Processing doc style for operation bloquearObjeto.
+Processing doc style for operation buscaContrato.
+Processing doc style for operation solicitaEtiquetas.
+Processing doc style for operation solicitaXmlPlp.
+Processing doc style for operation validarPostagemReversa.
+Processing doc style for operation buscaCliente.
+Processing doc style for operation buscaPagamentoEntrega.
+Processing doc style for operation solicitarPostagemScol.
+Processing doc style for operation buscaServicos.
+Populating WSDL schema RemoteFiles/AtendeCliente.xsd.
+Creating file RemoteFiles/AtendeCliente.xsd in the workspace.
+Creating file RemoteFiles/AtendeCliente_InlineSchema1.xsd in the workspace.
+Copying source WSDL AtendeCliente?wsdl to AtendeCliente.wsdl.
+
+Elapsed time processing this message definition file: 0.834 seconds
+Number of warnings for this message definition file: 0
+
+
+Number of files processed: 1
+
+

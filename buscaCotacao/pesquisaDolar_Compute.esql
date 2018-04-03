@@ -1,0 +1,42 @@
+
+
+
+CREATE COMPUTE MODULE pesquisaDolar_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		-------------------------------------------------------------------------------
+		-- Endpoint do provedor que teremos que acessar
+		-- http://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados/ultimos/10?formato=json
+		-------------------------------------------------------------------------------
+		-------------------------------------------------------------------------------
+		-- Atribuindo os dados de entrada do node com os dados de saida do node,
+		-- utilizado para filtar os dados que será enviados para a proxima estapa
+		-------------------------------------------------------------------------------
+		SET OutputRoot = InputRoot;
+		SET OutputLocalEnvironment = InputLocalEnvironment;
+		-------------------------------------------------------------------------------
+		-- Setando content-type
+		-------------------------------------------------------------------------------
+		SET OutputRoot.HTTPRequestHeader."Content-Type" = 'application/json;charset=utf-8';
+		-------------------------------------------------------------------------------
+		-- Declarando variaveis
+		-------------------------------------------------------------------------------
+		DECLARE uri_parte1 CHAR;
+		DECLARE dias CHAR;
+		DECLARE uri_parte2 CHAR;
+		DECLARE endpoint CHAR;
+		-------------------------------------------------------------------------------
+		-- Concatenando a URL para compor o endpoint
+		-------------------------------------------------------------------------------
+		SET uri_parte1 = 'http://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados/ultimos/';
+		SET dias = InputLocalEnvironment.REST.Input.Parameters.data;
+		SET uri_parte2 = '?formato=json';
+		SET endpoint = uri_parte1 || dias || uri_parte2;
+		-------------------------------------------------------------------------------
+		-- Setando o endpoint no node de HTTP Request
+		-------------------------------------------------------------------------------
+		SET OutputLocalEnvironment.Destination.HTTP.RequestURL = endpoint;
+
+		RETURN TRUE;
+	END;
+END MODULE;

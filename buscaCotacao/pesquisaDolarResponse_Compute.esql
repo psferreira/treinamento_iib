@@ -1,0 +1,20 @@
+
+
+
+
+CREATE COMPUTE MODULE pesquisaDolarResponse_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE I INTEGER CARDINALITY(InputRoot.JSON.Data.*[]);
+		DECLARE J INTEGER 1;
+
+		WHILE J <= I DO
+			SET OutputRoot.JSON.Data.cotacaoRetorno[J].data = InputRoot.JSON.Data.Item[J].data;
+			SET OutputRoot.JSON.Data.cotacaoRetorno[J].valor = InputRoot.JSON.Data.Item[J].valor;
+
+			SET J = J + 1;
+		END WHILE;
+
+		RETURN TRUE;
+	END;
+END MODULE;

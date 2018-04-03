@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot xmlns="http://www.ibm.com/2008/ccl/Mapping" domainID="com.ibm.msl.mapping.xml" domainIDExtension="mb" mainMap="true" targetNamespace="gen" version="8.0.5.0" xmlns:map="gen">
+    <input path="/buscaCep_InlineSchema1.xsd" var="var1"/>
+    <input path="/RemoteFiles/AtendeCliente_InlineSchema1.xsd" var="var"/>
+    <output path="jar:file://!com/ibm/etools/mft/map/xsds/predefined/SOAPDomainMsg.xsd"/>
+    <namespaces>
+        <namespace kind="supplement" prefix="in" uri="http://buscaCep"/>
+    </namespaces>
+    <generation engine="xquery"/>
+    <mappingDeclaration name="buscaCep_Request_Response_Mapping">
+        <input namespace="http://buscaCep" path="$var1/mb:msg(buscaCep,assembly,XMLNSC,Properties)" var="ComIbmMessageAssembly_buscaCep"/>
+        <output path="mb:msg(SOAP_Domain_Msg,assembly,XMLNSC,Properties)" var="ComIbmMessageAssembly_SOAP_Domain_Msg">
+            <cast path="$ComIbmMessageAssembly_SOAP_Domain_Msg/SOAP_Domain_Msg/Body/any" qualifier="{http://cliente.bean.master.sigep.bsb.correios.com.br/}consultaCEP" ref="var"/>
+        </output>
+        <move>
+            <input path="$ComIbmMessageAssembly_buscaCep/Properties"/>
+            <output path="$ComIbmMessageAssembly_SOAP_Domain_Msg/Properties"/>
+        </move>
+        <move>
+            <input path="$ComIbmMessageAssembly_buscaCep/buscaCep/input/codigoPostal"/>
+            <output path="$ComIbmMessageAssembly_SOAP_Domain_Msg/SOAP_Domain_Msg/Body/consultaCEP/cep"/>
+        </move>
+    </mappingDeclaration>
+</mappingRoot>

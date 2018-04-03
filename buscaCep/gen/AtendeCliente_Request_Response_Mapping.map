@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot xmlns="http://www.ibm.com/2008/ccl/Mapping" domainID="com.ibm.msl.mapping.xml" domainIDExtension="mb" mainMap="true" targetNamespace="gen" version="8.0.5.0" xmlns:map="gen">
+    <input path="jar:file://!com/ibm/etools/mft/map/xsds/predefined/SOAPDomainMsg.xsd" var="var2"/>
+    <input path="/buscaCep_InlineSchema1.xsd" var="var"/>
+    <input path="/RemoteFiles/AtendeCliente_InlineSchema1.xsd" var="var1"/>
+    <output path="jar:file://!com/ibm/etools/mft/map/xsds/predefined/SOAPDomainMsg.xsd"/>
+    <namespaces>
+        <namespace kind="supplement" prefix="in" uri="http://cliente.bean.master.sigep.bsb.correios.com.br/"/>
+        <namespace kind="supplement" prefix="io" uri="http://buscaCep"/>
+    </namespaces>
+    <generation engine="xquery"/>
+    <mappingDeclaration name="AtendeCliente_Request_Response_Mapping">
+        <input path="$var2/mb:msg(SOAP_Domain_Msg,assembly,SOAP,Properties)" var="ComIbmMessageAssembly_SOAP_Domain_Msg">
+            <cast path="$ComIbmMessageAssembly_SOAP_Domain_Msg/SOAP_Domain_Msg/Body/any" qualifier="{http://cliente.bean.master.sigep.bsb.correios.com.br/}consultaCEPResponse" ref="var1"/>
+        </input>
+        <output path="mb:msg(SOAP_Domain_Msg,assembly,SOAP,Properties)" var="ComIbmMessageAssembly_SOAP_Domain_Msg1">
+            <cast path="$ComIbmMessageAssembly_SOAP_Domain_Msg1/SOAP_Domain_Msg/Body/any" qualifier="{http://buscaCep}buscaCepResponse" ref="var"/>
+        </output>
+        <move>
+            <input path="$ComIbmMessageAssembly_SOAP_Domain_Msg/Properties"/>
+            <output path="$ComIbmMessageAssembly_SOAP_Domain_Msg1/Properties"/>
+        </move>
+        <move>
+            <input path="$ComIbmMessageAssembly_SOAP_Domain_Msg/SOAP_Domain_Msg/Body/consultaCEPResponse/return/uf"/>
+            <output path="$ComIbmMessageAssembly_SOAP_Domain_Msg1/SOAP_Domain_Msg/Body/buscaCepResponse/output/estado"/>
+        </move>
+        <move>
+            <input path="$ComIbmMessageAssembly_SOAP_Domain_Msg/SOAP_Domain_Msg/Body/consultaCEPResponse/return/complemento"/>
+            <output path="$ComIbmMessageAssembly_SOAP_Domain_Msg1/SOAP_Domain_Msg/Body/buscaCepResponse/output/complemento"/>
+        </move>
+        <move>
+            <input path="$ComIbmMessageAssembly_SOAP_Domain_Msg/SOAP_Domain_Msg/Body/consultaCEPResponse/return/bairro"/>
+            <output path="$ComIbmMessageAssembly_SOAP_Domain_Msg1/SOAP_Domain_Msg/Body/buscaCepResponse/output/bairro"/>
+        </move>
+        <move>
+            <input path="$ComIbmMessageAssembly_SOAP_Domain_Msg/SOAP_Domain_Msg/Body/consultaCEPResponse/return/cep"/>
+            <output path="$ComIbmMessageAssembly_SOAP_Domain_Msg1/SOAP_Domain_Msg/Body/buscaCepResponse/output/cep"/>
+        </move>
+        <move>
+            <input path="$ComIbmMessageAssembly_SOAP_Domain_Msg/SOAP_Domain_Msg/Body/consultaCEPResponse/return/end"/>
+            <output path="$ComIbmMessageAssembly_SOAP_Domain_Msg1/SOAP_Domain_Msg/Body/buscaCepResponse/output/endereco"/>
+        </move>
+        <move>
+            <input path="$ComIbmMessageAssembly_SOAP_Domain_Msg/SOAP_Domain_Msg/Body/consultaCEPResponse/return/cidade"/>
+            <output path="$ComIbmMessageAssembly_SOAP_Domain_Msg1/SOAP_Domain_Msg/Body/buscaCepResponse/output/cidade"/>
+        </move>
+    </mappingDeclaration>
+</mappingRoot>
