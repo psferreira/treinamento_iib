@@ -20,7 +20,7 @@ No packages found matching rpm
 
 Then you must install the RPM package before you install IBM WebSphere MQ. For example:
 
-``sudo apt-get install rpm``
+``apt-get install rpm``
 
 If this command does not complete successfully, consult your Ubuntu administrator for instructions specific to your system to install the RPM package.
 
@@ -38,7 +38,7 @@ If this command does not complete successfully, consult your Ubuntu administrato
 
 3. If you have chosen this installation to be the primary installation on the system, you must now set it as the primary installation. Enter the following command at the command prompt:
 
-``sudo /opt/mqm/bin/setmqinst -i -p /opt/mqm/``
+``/opt/mqm/bin/setmqinst -i -p /opt/mqm/``
 
 ## IBM MQ Control commands reference
 
