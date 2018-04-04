@@ -2,7 +2,8 @@
   "swagger" : "2.0",
   "info" : {
     "version" : "1.0.0",
-    "title" : "Consulta de cotação do dolar por data"
+    "title" : "Consulta de cotação do dolar por data",
+    "description" : "Consulta de cotação do dolar por data"
   },
   "basePath" : "/cotacao",
   "schemes" : [ "http", "https" ],

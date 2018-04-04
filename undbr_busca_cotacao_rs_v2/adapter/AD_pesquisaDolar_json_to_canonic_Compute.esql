@@ -1,0 +1,17 @@
+
+
+BROKER SCHEMA adapter
+
+
+CREATE COMPUTE MODULE AD_pesquisaDolar_json_to_canonic_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot = InputRoot;
+		SET OutputLocalEnvironment = InputLocalEnvironment;
+		DECLARE nsDias NAMESPACE 'http:///www.unimed.com.br/Legado/CotacaoInput';
+		SET OutputRoot.XMLNSC.nsDias:Cotacao.qtdeDias = InputLocalEnvironment.REST.Input.Parameters.dias;
+		RETURN TRUE;
+	END;
+
+
+END MODULE;

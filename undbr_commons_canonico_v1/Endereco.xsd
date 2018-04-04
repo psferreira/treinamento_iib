@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http:///www.unimed.com.br/Legado/Endereco" xmlns:this="http:///www.unimed.com.br/Legado/Endereco">
+
+	<xsd:complexType name="EnderecoType">
+		<xsd:sequence>
+			<xsd:element name="endereco" type="xsd:string" />
+			<xsd:element name="bairro" type="xsd:string" />
+			<xsd:element name="cidade" type="xsd:string" />
+			<xsd:element name="estado" type="xsd:string" />
+			<xsd:element name="cep" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="Endereco" type="this:EnderecoType"></xsd:element>
+</xsd:schema>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:restapiDescriptor xmlns="http://com.ibm.etools.mft.descriptor.base" xmlns:ns2="http://com.ibm.etools.mft.descriptor.restapi" definitionType="swagger_20" definitionFile="cotacao-dolar-nivelIII.json" implementation="gen/undbr_busca_cotacao_rs_v2.msgflow" https="false">
+    <references>
+        <sharedLibraryReference>
+            <libraryName>undbr_commons_canonico_v1</libraryName>
+        </sharedLibraryReference>
+    </references>
+    <ns2:operations>
+        <ns2:operation name="pesquisaDolar" implementation="pesquisaDolar.subflow"/>
+    </ns2:operations>
+    <ns2:errorHandlers>
+        <ns2:errorHandler type="CATCH" implementation="undbr_busca_cotacao_rs_v2InputCatchHandler.subflow"/>
+        <ns2:errorHandler type="FAILURE" implementation="undbr_busca_cotacao_rs_v2InputFailureHandler.subflow"/>
+        <ns2:errorHandler type="TIMEOUT" implementation="undbr_busca_cotacao_rs_v2InputTimeoutHandler.subflow"/>
+    </ns2:errorHandlers>
+</ns2:restapiDescriptor>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ComIbmMQOutput.msgnode="ComIbmMQOutput.msgnode" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow="http://www.ibm.com/wbi/2005/eflow" xmlns:utility="http://www.ibm.com/wbi/2005/eflow_utility" nsURI="undbr_busca_cotacao_rs_v2InputTimeoutHandler.subflow" nsPrefix="undbr_busca_cotacao_rs_v2InputTimeoutHandler.subflow">
+  <eClassifiers xmi:type="eflow:FCMComposite" name="FCMComposite_1">
+    <eSuperTypes href="http://www.ibm.com/wbi/2005/eflow#//FCMBlock"/>
+    <translation xmi:type="utility:TranslatableString" key="undbr_busca_cotacao_rs_v2InputTimeoutHandler" bundleName="undbr_busca_cotacao_rs_v2InputTimeoutHandler" pluginId="undbr_busca_cotacao_rs_v2"/>
+    <colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/undbr_busca_cotacao_rs_v2/icons/full/obj16/undbr_busca_cotacao_rs_v2InputTimeoutHandler.gif"/>
+    <colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/undbr_busca_cotacao_rs_v2/icons/full/obj30/undbr_busca_cotacao_rs_v2InputTimeoutHandler.gif"/>
+    <composition>
+      <nodes xmi:type="eflow:FCMSource" xmi:id="InTerminal.Input_1" location="17,15">
+        <translation xmi:type="utility:TranslatableString" key="Input" bundleName="undbr_busca_cotacao_rs_v2InputTimeoutHandler" pluginId="undbr_busca_cotacao_rs_v2"/>
+      </nodes>
+      <nodes xmi:type="eflow:FCMSink" xmi:id="OutTerminal.Output_1" location="313,14">
+        <translation xmi:type="utility:TranslatableString" key="Output" bundleName="undbr_busca_cotacao_rs_v2InputTimeoutHandler" pluginId="undbr_busca_cotacao_rs_v2"/>
+      </nodes>
+      <nodes xmi:type="ComIbmMQOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="143,15" queueName="LOG" destinationQueueManagerName="IIM10MQ">
+        <translation xmi:type="utility:ConstantString" string="MQ Output"/>
+      </nodes>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_1" targetNode="FCMComposite_1_1" sourceNode="InTerminal.Input_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_2" targetNode="OutTerminal.Output_1" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+    </composition>
+    <propertyOrganizer/>
+    <stickyBoard/>
+  </eClassifiers>
+</ecore:EPackage>

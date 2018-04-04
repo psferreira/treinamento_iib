@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+				targetNamespace="http:///www.unimed.com.br/Legado/Valores" 
+				xmlns:this="http:///www.unimed.com.br/Legado/Valores">
+
+	<xsd:complexType name="ValoresType">
+		<xsd:sequence>
+			<xsd:element name="data" type="xsd:string"/>
+			<xsd:element name="valor" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:element name="Valores" type="this:ValoresType"></xsd:element>
+</xsd:schema>

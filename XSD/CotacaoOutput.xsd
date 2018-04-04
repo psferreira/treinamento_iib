@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+				targetNamespace="http:///www.unimed.com.br/Legado/CotacaoOutput" 
+				xmlns:this="http:///www.unimed.com.br/Legado/CotacaoOutput" xmlns:Q1="http:///www.unimed.com.br/Legado/Valores">
+
+    <xsd:import schemaLocation="Valores.xsd" namespace="http:///www.unimed.com.br/Legado/Valores"></xsd:import>
+    <xsd:complexType name="CotacaoOutputType">
+		<xsd:sequence>
+			<xsd:element name="valores" type="Q1:ValoresType" maxOccurs="unbounded" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:element name="CotacaoOutput" type="this:CotacaoOutputType"></xsd:element>
+</xsd:schema>

@@ -1,0 +1,59 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Consulta de cotação do dolar por data"
+  },
+  "basePath": "/cotacao",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json",
+    "application/xml"
+  ],
+  "produces": [
+    "application/json",
+    "application/xml"
+  ],
+  "paths": {
+    "/dolar/{data}": {
+      "get": {
+        "operationId": "pesquisaDolar",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "consulta realizada com sucesso",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/cotacaoRetorno"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "cotacaoRetorno": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "string"
+        },
+        "valor": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
