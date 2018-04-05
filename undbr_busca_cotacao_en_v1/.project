@@ -3,6 +3,7 @@
 	<name>undbr_busca_cotacao_en_v1</name>
 	<comment></comment>
 	<projects>
+		<project>undbr_commons_canonico_v1</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

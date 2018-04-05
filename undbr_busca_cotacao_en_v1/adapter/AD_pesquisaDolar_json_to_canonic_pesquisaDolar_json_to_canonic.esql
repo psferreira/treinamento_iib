@@ -1,0 +1,19 @@
+
+
+BROKER SCHEMA adapter
+
+
+CREATE COMPUTE MODULE AD_pesquisaDolar_json_to_canonic_pesquisaDolar_json_to_canonic
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE ns NAMESPACE 'http:///www.unimed.com.br/Legado/CotacaoOutput';
+		DECLARE I INTEGER CARDINALITY(InputRoot.JSON.Data.*[]);
+		DECLARE J INTEGER 1;
+		WHILE J <= I DO
+			SET OutputRoot.XMLNSC.ns:CotacaoOutput.valores[J].data = InputRoot.JSON.Data.Item[J].data;
+			SET OutputRoot.XMLNSC.ns:CotacaoOutput.valores[J].valor = InputRoot.JSON.Data.Item[J].valor;
+			SET J = J + 1;
+		END WHILE;
+		RETURN TRUE;
+	END;
+END MODULE;

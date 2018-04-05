@@ -1,0 +1,43 @@
+
+
+
+
+
+
+
+
+BROKER SCHEMA adapter
+
+
+CREATE COMPUTE MODULE AD_pesquisaDolar_canonic_to_json_pesquisaDolar_canonic_to_json
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot = InputRoot;
+		SET OutputLocalEnvironment = InputLocalEnvironment;
+		DECLARE nsDias NAMESPACE 'http:///www.unimed.com.br/Legado/CotacaoInput';
+		-------------------------------------------------------------------------------
+		-- Endpoint do provedor que teremos que acessar
+		-- http://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados/ultimos/10?formato=json
+		-------------------------------------------------------------------------------
+		-- Declarando variaveis
+		-------------------------------------------------------------------------------
+		DECLARE uri_parte1 CHAR;
+		DECLARE dias
+		CHAR;
+		DECLARE uri_parte2 CHAR;
+		DECLARE endpoint
+		CHAR;
+		-------------------------------------------------------------------------------
+		-- Concatenando a URL para compor o endpoint
+		-------------------------------------------------------------------------------
+		SET uri_parte1 = 'http://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados/ultimos/';
+		SET dias = InputRoot.XMLNSC.nsDias:Cotacao.qtdeDias;
+		SET uri_parte2 = '?formato=json';
+		SET endpoint = uri_parte1 || dias || uri_parte2;
+		-------------------------------------------------------------------------------
+		-- Setando o endpoint no node de HTTP Request
+		-------------------------------------------------------------------------------
+		SET OutputLocalEnvironment.Destination.HTTP.RequestURL = endpoint;
+		RETURN TRUE;
+	END;
+END MODULE;
